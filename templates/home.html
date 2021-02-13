@@ -1,0 +1,143 @@
+{% extends 'layout.html' %} {% block body %}
+<!-- Page Content -->
+<div class="container">
+	<div class="row align-items-center mb-5 my-4">
+		<div class="col-lg-5 px-5 mx-auto order-2 order-lg-1">
+			<img
+				src="https://cdn.pixabay.com/photo/2014/12/09/23/40/macbook-562499__480.png"
+				alt=""
+				class="img-fluid mb-4 mb-lg-0"
+			/>
+		</div>
+		<div class="col-lg-6 order-2 order-lg-2 mb-2">
+			<i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
+			<h1>  {{param["blog_name"]}}  </h1>
+			<p class="text-muted mb-4"> {{param["tagline"]}}  </p>
+			<a href="#" class="btn btn-primary px-5 rounded-pill shadow-sm"
+				>Contact Us</a
+			>
+		</div>
+	</div>
+	<hr />
+	<h2 class="my-4">Blog posts</h2>
+	<div class="row">
+		<div class="col-md-8">
+
+			<!-- Blog Post -->
+<div>
+	
+	{% for post in posts %}
+			<div class="border rounded mb-4 shadow-sm overflow-hidden">
+				<div class="row g-0 flex-md-row h-md-250 position-relative">
+					<div class="col p-4 d-flex flex-column position-static">
+						<strong class="d-inline-block mb-2 text-primary">Category</strong>
+						<h3 class="mb-0"> {{ post.title }}</h3>
+						<!-- <div class="mb-1 text-muted">{{ post.date }}</div> -->
+						<p class="card-text mb-auto">
+							{{ post.content[0:150] }}...
+						</p>
+						<a href="/post/{{ post.slug }}" class="stretched-link">Continue reading</a>
+					</div>
+					<div class="col-auto d-none d-lg-block">
+						{% set fname='img/'+post.image  %}
+						<img
+							class="bd-placeholder-img rounded border"
+							width="200"
+							height="250"
+							src="{{ url_for('static',filename=fname) }}"
+						/>
+					</div>
+				</div>
+				<div class="card-footer text-muted">
+					Posted on {{ post.date }} by
+					<a href="#">{{ post.author }}</a>
+				</div>
+			</div>
+	{% endfor %}
+
+</div>
+			
+
+		
+			
+
+			<!-- Pagination -->
+			<ul class="pagination justify-content-center mb-4">
+				<li class="page-item">
+					<a class="page-link" href="{{prev}}">&larr; Older</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link" href="{{next}}">Newer &rarr;</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Sidebar Widgets Column -->
+		<div class="col-md-4">
+			<!-- Search Widget -->
+			<div class="card my-4">
+				<h5 class="card-header">Search</h5>
+				<div class="card-body">
+					<div class="input-group">
+						<input
+							type="text"
+							class="form-control"
+							placeholder="Search for..."
+						/>
+						<span class="input-group-append">
+							<button class="btn btn-primary" type="button">Go!</button>
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Categories Widget -->
+			<div class="card my-4">
+				<h5 class="card-header">Categories</h5>
+				<div class="card-body">
+					<div class="row">
+						<div class="col-lg-6">
+							<ul class="list-unstyled mb-0">
+								<li>
+									<a href="#">Web Design</a>
+								</li>
+								<li>
+									<a href="#">HTML</a>
+								</li>
+								<li>
+									<a href="#">Freebies</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-lg-6">
+							<ul class="list-unstyled mb-0">
+								<li>
+									<a href="#">JavaScript</a>
+								</li>
+								<li>
+									<a href="#">CSS</a>
+								</li>
+								<li>
+									<a href="#">Tutorials</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Side Widget -->
+			<div class="card my-4">
+				<h5 class="card-header">Side Widget</h5>
+				<div class="card-body">
+					You can put anything you want inside of these side widgets. They are
+					easy to use, and feature the new Bootstrap 4 card containers!
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.row -->
+</div>
+<!-- /.container -->
+
+{% endblock %}

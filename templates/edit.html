@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>{{param["blog_name"]}} </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template --> 
+  <link href="{{ url_for('static',filename='login.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+    
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+       
+      <h2>Edit</h2>
+      <!-- Login Form -->
+      <form action="/edit/{{sno}}" method="post">
+        <input type="text" class="fadeIn second" name="title" placeholder="title" value="{{post.title}}">
+        <input type="text" class="fadeIn second" name="content" placeholder="content" value="{{post.content}}">
+        <input type="text" class="fadeIn second" name="author" placeholder="author" value="{{post.author}}">
+        <input type="text" class="fadeIn second" name="img_src" placeholder="img_src" value="{{post.img_src}}">
+        <input type="text" class="fadeIn second" name="slug" placeholder="slug" value="{{post.slug}}">
+        <input type="submit" class="fadeIn fourth" value="Done">
+      </form>
+  
+    </div>
+  </div>
+</div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

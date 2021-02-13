@@ -1,0 +1,20 @@
+{
+    "params":
+    {
+        "local_server":"true",
+        "local_uri":"mysql+pymysql://root:@localhost/codeupload",
+        "prod_uri":"",
+        "fb_url":"",
+        "tw_url":"",
+        "gh_url":"",
+        "ig_url":"",
+        "blog_name":"Code Upload",
+        "tagline":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat cumque aut explicabo nihil, molestias quibusdam fuga quas harum cum dignissimos, odio non ipsa laboriosam quaerat consequatur, animi voluptas alias eos.",
+        "gmail_user":"pallavibobde1@gmail.com",
+        "gmail_password":"Pallavi@1234",
+        "no_of_posts": 2,
+        "admin_user":"pb",
+        "admin_password":"pb",
+        "upload_loacation":"C:\\Users\\Pallavi Bobde\\Desktop\\in desktop\\web devlopment bootcamp\\flask\\static\\img"
+    }
+}
